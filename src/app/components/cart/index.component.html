@@ -1,0 +1,85 @@
+<div class="container" style="padding-top: 60px;">
+  <div class="row">
+    <div *ngIf="items.length === 0" style="padding: 60px 0; width: 100%;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4"></div>
+          <div class="col-sm-4 text-center">
+            <h2 class="bg-danger text-white">
+              Oops! No Products Found in Cart
+            </h2>
+            <h3>Please, Add Products to Cart</h3>
+            <button
+              mat-button
+              [routerLink]="'/products'"
+              mat-raised-button
+              color="accent"
+            >
+              Continue Shopping
+            </button>
+          </div>
+          <div class="col-sm-4"></div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="items.length > 0" style="width: 100%;">
+      <table border="1" style="width: 100%; margin-bottom: 30px;">
+        <tr>
+          <th>Product</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+          <th>Action</th>
+        </tr>
+        <tr *ngFor="let item of items">
+          <td>
+            <img
+              src="../../../assets/images/{{ item.product.photo }}.jpeg"
+              width="100"
+            />
+          </td>
+          <td class="product-name">{{ item.product.name }}</td>
+          <td class="product-price">$ {{ item.product.price }}</td>
+          <td class="product-quantity">
+            {{ item.quantity }}
+          </td>
+          <td class="product-total">
+            $ {{ item.product.price * item.quantity }}
+          </td>
+          <td align="center">
+            <a (click)="remove(item.product.id)" class="pointer"
+              ><mat-icon>delete</mat-icon></a
+            >
+          </td>
+        </tr>
+      </table>
+      <div class="row">
+        <div class="col-sm-5">
+          <button
+            mat-button
+            [routerLink]="'/products'"
+            mat-raised-button
+            color="accent"
+          >
+            Continue Shopping
+          </button>
+        </div>
+        <div class="col-sm-3"></div>
+        <div class="col-sm-2">
+          <p class="grand-total">Grand Total: $ {{ total }}</p>
+        </div>
+        <div class="col-sm-2">
+          <button
+            mat-button
+            [routerLink]="'/checkout'"
+            mat-raised-button
+            color="accent"
+          >
+            Proceed to Checkout
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

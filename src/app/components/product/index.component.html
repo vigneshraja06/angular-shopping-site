@@ -1,0 +1,33 @@
+<h1 style="padding: 40px 0; font-weight: bold;">Product List</h1>
+<div
+  style="flex-flow: row wrap; box-sizing: border-box; display: flex;"
+  class="container"
+>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let product of products">
+      <div class="example-card">
+        <img
+          mat-card-image
+          class="product-image img-responsive"
+          src="../../../assets/images/{{ product.photo }}.jpeg"
+          alt="{{ product.name }}"
+          height="250"
+        />
+        <h2>{{ product.name }}</h2>
+        <div>
+          <h2 style="float: left;">$ {{ product.price }}</h2>
+          <div class="icon-holder" style="float: right;">
+            <a mat-button [routerLink]="['/cart', { id: product.id }]">
+              <mat-icon
+                class="mat-icon-lg mat-icon material-icons notranslate mat-icon-no-color"
+                role="img"
+                aria-hidden="true"
+                >shopping_cart</mat-icon
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,163 @@
+<app-carousel></app-carousel>
+<div class="container-fluid four-cards">
+  <div class="row">
+    <div class="col-md-3">
+      <mat-card
+        class="light-block mat-card"
+        fxlayout="row"
+        fxlayoutalign="start center"
+        style="
+          flex-direction: row;
+          box-sizing: border-box;
+          display: flex;
+          place-content: center flex-start;
+          align-items: center;
+          padding-left: 10px;
+        "
+        ><mat-icon
+          class="mat-icon-lg m-0 mat-icon notranslate material-icons mr-sm-2"
+          color="accent"
+          role="img"
+          style="font-size: 40px; font-weight: bold; height: 40px; width: 40px;"
+          aria-hidden="true"
+          >history</mat-icon
+        >
+        <div class="content">
+          <p class="four-box-title">Online Support 24/7</p>
+          <span class="four-box-sub m-0"
+            >Lorem Ipsum has been the industry's standard dummy text ever</span
+          >
+        </div></mat-card
+      >
+    </div>
+    <div class="col-md-3">
+      <mat-card
+        class="light-block mat-card"
+        fxlayout="row"
+        fxlayoutalign="start center"
+        style="
+          flex-direction: row;
+          box-sizing: border-box;
+          display: flex;
+          place-content: center flex-start;
+          align-items: center;
+          padding-left: 10px;
+        "
+        ><mat-icon
+          class="mat-icon-lg m-0 mat-icon notranslate material-icons mr-sm-2"
+          color="accent"
+          role="img"
+          style="font-size: 40px; font-weight: bold; height: 40px; width: 40px;"
+          aria-hidden="true"
+          >monetization_on</mat-icon
+        >
+        <div class="content">
+          <p class="four-box-title">Money Back Guarantee</p>
+          <span class="four-box-sub m-0"
+            >Lorem Ipsum has been the industry's standard dummy text ever</span
+          >
+        </div></mat-card
+      >
+    </div>
+    <div class="col-md-3">
+      <mat-card
+        class="light-block mat-card"
+        fxlayout="row"
+        fxlayoutalign="start center"
+        style="
+          flex-direction: row;
+          box-sizing: border-box;
+          display: flex;
+          place-content: center flex-start;
+          align-items: center;
+          padding-left: 10px;
+        "
+        ><mat-icon
+          class="mat-icon-lg m-0 mat-icon notranslate material-icons mr-sm-2"
+          color="accent"
+          role="img"
+          style="font-size: 40px; font-weight: bold; height: 40px; width: 40px;"
+          aria-hidden="true"
+          >local_shipping</mat-icon
+        >
+        <div class="content">
+          <p class="four-box-title">Free Shipping</p>
+          <span class="four-box-sub m-0"
+            >Lorem Ipsum has been the industry's standard dummy text ever</span
+          >
+        </div></mat-card
+      >
+    </div>
+    <div class="col-md-3">
+      <mat-card
+        class="light-block mat-card"
+        fxlayout="row"
+        fxlayoutalign="start center"
+        style="
+          flex-direction: row;
+          box-sizing: border-box;
+          display: flex;
+          place-content: center flex-start;
+          align-items: center;
+          padding-left: 10px;
+        "
+        ><mat-icon
+          class="mat-icon-lg m-0 mat-icon notranslate material-icons mr-sm-2"
+          color="accent"
+          role="img"
+          style="font-size: 40px; font-weight: bold; height: 40px; width: 40px;"
+          aria-hidden="true"
+          >security</mat-icon
+        >
+        <div class="content">
+          <p class="four-box-title">Secure Payments</p>
+          <span class="four-box-sub m-0"
+            >Lorem Ipsum has been the industry's standard dummy text ever</span
+          >
+        </div></mat-card
+      >
+    </div>
+  </div>
+</div>
+<h1 style="padding: 40px 0;">Our Products</h1>
+<div
+  style="flex-flow: row wrap; box-sizing: border-box; display: flex;"
+  class="container"
+>
+  <div class="row">
+    <div class="col-sm-3" *ngFor="let product of products">
+      <div class="example-card">
+        <img
+          mat-card-image
+          class="product-image img-responsive"
+          src="../../../assets/images/{{ product.photo }}.jpeg"
+          alt="{{ product.name }}"
+          height="250"
+        />
+        <h2>{{ product.name }}</h2>
+        <div>
+          <h2 style="float: left;">$ {{ product.price }}</h2>
+          <div class="icon-holder" style="float: right;">
+            <a mat-button [routerLink]="['/cart', { id: product.id }]">
+              <mat-icon
+                class="mat-icon-lg mat-icon material-icons notranslate mat-icon-no-color"
+                role="img"
+                aria-hidden="true"
+                >shopping_cart</mat-icon
+              ></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    mat-button
+    [routerLink]="'/products'"
+    mat-raised-button
+    color="accent"
+    style="margin-bottom: 40px; font-size: 15px;"
+  >
+    View All Products <mat-icon>arrow_right_alt</mat-icon>
+  </button>
+</div>

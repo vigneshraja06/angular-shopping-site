@@ -1,0 +1,33 @@
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+.mat-form-field-flex {
+  background-color: #f7f7f7;
+}
+table {
+  width: 100%;
+  border: 1px solid #f1f1f1;
+}
+td,
+th {
+  text-align: center;
+  vertical-align: middle;
+  padding: 20px;
+}
+th {
+  color: #0000008a;
+  font-size: 16px;
+  color: #333;
+}
+.unit-price {
+  font-weight: 500;
+  font-size: 15px;
+}
+.sub-total {
+  font-weight: 500;
+  font-size: 15px;
+}
+.grand-total {
+  font-weight: 500;
+  font-size: 15px;
+}
